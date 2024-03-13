@@ -1,0 +1,41 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\admin\\.ohos\\config\\auto_debug_Cartographer_com.example.cartographer_900086000300556156.cer",
+          "storePassword": "0000001A721F1CB83AEDA60765A68F40F7EC1487EA9AC1ED9808AA293EB5DA85FD68F1AC5ED848A683FE",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001A6EDF64F2EB6BCBCC55118B7696A5032996BE719A9AADF2FEF7E3B78797103A183B1D2731212E",
+          "profile": "C:\\Users\\admin\\.ohos\\config\\auto_debug_Cartographer_com.example.cartographer_900086000300556156.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\admin\\.ohos\\config\\auto_debug_Cartographer_com.example.cartographer_900086000300556156.p12"
+        }
+      }
+    ],
+    "compileSdkVersion": 9,
+    "compatibleSdkVersion": 9,
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
