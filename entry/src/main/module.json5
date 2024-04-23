@@ -1,11 +1,11 @@
 {
   "module": {
-    "requestPermissions": [
-      {
-        //寻求网络权限
-        "name": "ohos.permission.INTERNET"
-      }
+    "requestPermissions":   [
+      {"name":   "ohos.permission.GET_NETWORK_INFO"},
+      {"name":   "ohos.permission.SET_NETWORK_INFO"},
+      {"name":   "ohos.permission.INTERNET"},
     ],
+
     "name": "entry",
     "type": "entry",
     "description": "$string:module_desc",

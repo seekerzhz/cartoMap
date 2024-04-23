@@ -1,6 +1,11 @@
 import UserPrivacyDialog from '../view/welcome/UerPrivacyDialog';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
+import preferences from '@ohos.data.preferences';
+import PreferenceUtil from '../common/utils/PreferenceUtil';
+//import Router from '@system.router';
+import router from '@ohos.router';
+
+const PREF_KEY = 'userPrivacyKey'
 @Entry
 @Component
 struct WelcomePage {
@@ -13,12 +18,29 @@ struct WelcomePage {
     })
   })
 
-  aboutToAppear() {
-    this.controller.open()
+  async aboutToAppear() {
+    // 加载
+    let isAgree = await PreferenceUtil.getPreferenceValue(PREF_KEY,false);
+    if(isAgree) {
+      // 跳转首页
+      this.jumpToIndex();
+    } else {
+      this.controller.open()
+    }
   }
 
+  jumpToIndex() {
+    setTimeout(() => {
+      router.replaceUrl({
+        url:'pages/Index'
+      })
+    },1000);
+  }
   onConfirm() {
-    // 保存，并跳转首页
+    // 保存
+    PreferenceUtil.putPreferenceValue(PREF_KEY,true);
+    // 跳转首页
+    this.jumpToIndex();
   }
 
   ExApp() {

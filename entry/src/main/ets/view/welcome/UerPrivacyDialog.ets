@@ -17,14 +17,14 @@ export default struct UserPrivacyDialog {
           .width(150)
           .backgroundColor('#2474b5')
           .onClick(()=>{
-            this.cancel();
+            this.confirm();
             this.controller.close()
           })
         Button("拒绝")
           .width(150)
           .backgroundColor('#2474b5')
           .onClick(()=>{
-            this.confirm();
+            this.cancel();
             this.controller.close()
           })
       }
